@@ -1,18 +1,18 @@
 const moongose = require("mongoose");
 
 const UserSchema = moongose.Schema({
-   name: String,
-   lastname: String,
+   nombre: String,
+   apellido: String,
    email: {
     type: String,
     required: true,
     unique: true //Esto es para evitar que se duplique otro usuario con el mismo email.
    },
-   age: Number,
+   edad: Number,
    password: String,
    role: String,
    avatar : String,
-   cloudinary_id : String,
+   carrito : Array,
    active:{
       type: Boolean,
       default: false
@@ -20,4 +20,4 @@ const UserSchema = moongose.Schema({
 })
 
 
-module.exports = moongose.model("User", UserSchema)
+module.exports = moongose.model("Users", UserSchema)
