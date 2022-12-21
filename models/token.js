@@ -1,10 +1,10 @@
 const moongose = require("mongoose");
 
 const TokenSchema = moongose.Schema({
-   userId: {
+   usuarioId: {
     type: moongose.Schema.Types.ObjectId,
     require: true,
-    ref: "user",
+    ref: "users",
     unique: true
    },
    token: {

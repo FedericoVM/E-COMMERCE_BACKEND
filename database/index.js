@@ -4,10 +4,8 @@ const conectarDB = async () => {
 
         try {
 
-            await mongoose.connect(process.env.URL_CONECTION_DATABASE), {
-                useNewUrlParser: true, 
-                useUnifiedTopology: true
-            };
+            mongoose.set("strictQuery", false);
+            await mongoose.connect(process.env.URI_CONECTION_DATABASE);
 
             console.log('Base de datos conectada');
         

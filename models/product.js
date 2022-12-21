@@ -1,17 +1,24 @@
 const moongose = require("mongoose");
 
 const ProdcutsSchema = moongose.Schema({
-    name: String,
-    price: Number,
-    productID: {
+    nombre: {
+      type: String,
+      require: true
+    },
+    precio: Number,
+    codigo: {
        type: String,
        require: true,
        unique: true
     },
-    category: String,
-    description: String,
-    image: String,
-    stock : Number
+    categoria: String,
+    descripcion: String,
+    imagen: {
+      type: String,
+      require: true
+    },
+    stock : Number,
+    marca : String
  })
 
- module.exports = moongose.model("Product", ProdcutsSchema);
+ module.exports = moongose.model("Productos", ProdcutsSchema);
