@@ -18,7 +18,11 @@ const ProdcutsSchema = moongose.Schema({
       require: true
     },
     stock : Number,
-    marca : String
+    marca : String,
+    destacado: {
+      type: Boolean,
+      default:false
+    }
  })
 
  module.exports = moongose.model("Productos", ProdcutsSchema);
