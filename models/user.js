@@ -16,7 +16,8 @@ const UserSchema = moongose.Schema({
    active:{
       type: Boolean,
       default: false
-   }
+   },
+   favoritos: Array
 })
 
 

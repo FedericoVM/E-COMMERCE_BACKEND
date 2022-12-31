@@ -31,9 +31,10 @@ const registrarUsuario = async(req, res) => {
         email,
         password,
         edad,
-        avatar,
+        avatar: "",   
         carrito : [],
-        role : "admin"
+        role : "usuario",
+        favoritos: []
     })
     newUser.email = email.toLowerCase()
     const saltos = bcrypt.genSaltSync(Number(process.env.SALT));
@@ -68,6 +69,7 @@ const loginUsuario = async(req, res) => {
 
     const emailLowerCase = email.toLowerCase();
 
+    console.log(email, password)
     try {
         const buscarUsuario = await UserModel.findOne({email: emailLowerCase});
         if(buscarUsuario) {
